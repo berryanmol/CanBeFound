@@ -537,7 +537,10 @@ function updateURL() {
 
 // Open item modal
 function openItemModal(item) {
-    if (window.ModalManager) {
+    // Use enhanced function if available
+    if (window.enhancedOpenItemModal) {
+        window.enhancedOpenItemModal(typeof item === 'object' ? item.id : item);
+    } else if (window.ModalManager) {
         // Create modal content
         const modalBody = document.getElementById('itemModalBody');
         if (modalBody) {
@@ -608,14 +611,21 @@ function createItemDetailHTML(item) {
 
 // Claim item
 function claimItem(itemId) {
-    if (!window.CanBeFound?.isLoggedIn()) {
-        window.ModalManager?.openModal('loginModal');
+    if (!window.Auth?.isLoggedIn()) {
+        if (window.ModalManager) {
+            window.ModalManager.openModal('loginModal');
+        }
         return;
     }
     
-    // Show claim process
-    if (window.CanBeFound) {
-        window.CanBeFound.showNotification('Claim process started. Please provide verification details.', 'info');
+    // Use enhanced claim functionality if available
+    if (window.enhancedClaimItem) {
+        window.enhancedClaimItem(itemId);
+    } else {
+        // Show claim process
+        if (window.CanBeFound) {
+            window.CanBeFound.showNotification('Claim process started. Please provide verification details.', 'info');
+        }
     }
     
     console.log('Claiming item:', itemId);

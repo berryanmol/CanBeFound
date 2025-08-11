@@ -439,8 +439,16 @@ function initializeBidModal() {
 
 // Open bid modal
 function openBidModal(auction) {
-    if (!window.CanBeFound?.isLoggedIn()) {
-        window.ModalManager?.openModal('loginModal');
+    if (!window.Auth?.isLoggedIn()) {
+        if (window.ModalManager) {
+            window.ModalManager.openModal('loginModal');
+        }
+        return;
+    }
+    
+    // Use enhanced function if available
+    if (window.enhancedOpenBidModal) {
+        window.enhancedOpenBidModal(auction);
         return;
     }
     
@@ -478,6 +486,15 @@ function openBidModal(auction) {
 
 // Handle bid submission
 function handleBidSubmission() {
+    // Check if user is logged in
+    if (!window.Auth?.isLoggedIn()) {
+        if (window.ModalManager) {
+            window.ModalManager.closeModal('bidModal');
+            window.ModalManager.openModal('loginModal');
+        }
+        return;
+    }
+    
     const modal = document.getElementById('bidModal');
     const bidAmountInput = document.getElementById('bidAmount');
     const auctionId = modal?.getAttribute('data-auction-id');
@@ -547,11 +564,14 @@ function showBidError(message) {
 
 // View auction details
 function viewAuctionDetails(auction) {
-    // In a real app, this would open a detailed view
-    console.log('Viewing auction details:', auction);
-    
-    if (window.CanBeFound) {
-        window.CanBeFound.showNotification('Auction details view would open here', 'info');
+    // Use enhanced function if available
+    if (window.enhancedViewAuctionDetails) {
+        window.enhancedViewAuctionDetails(auction);
+    } else {
+        console.log('Viewing auction details:', auction);
+        if (window.CanBeFound) {
+            window.CanBeFound.showNotification('Auction details view would open here', 'info');
+        }
     }
 }
 

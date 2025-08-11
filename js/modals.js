@@ -7,21 +7,34 @@ let previousFocus = null;
 // Initialize modal functionality
 document.addEventListener('DOMContentLoaded', function() {
     initializeModals();
-    const loginBtn = document.getElementById('loginBtn');
-    const signupBtn = document.getElementById('signupBtn');
-
-    if (loginBtn) {
-        loginBtn.addEventListener('click', () => openModal('loginModal'));
-    }
-    if (signupBtn) {
-        signupBtn.addEventListener('click', () => {
-            // TODO: create signupModal in HTML
-            openModal('signupModal');
-        });
-    }
+    initializeAuthButtons();
 });
 
+// Initialize auth buttons
+function initializeAuthButtons() {
+    const loginBtns = document.querySelectorAll('#loginBtn');
+    const signupBtns = document.querySelectorAll('#signupBtn');
 
+    loginBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (window.Auth?.isLoggedIn()) {
+                window.Auth.showUserProfile();
+            } else {
+                openModal('loginModal');
+            }
+        });
+    });
+    
+    signupBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (window.Auth?.isLoggedIn()) {
+                window.Auth.logout();
+            } else {
+                openModal('signupModal');
+            }
+        });
+    });
+}
 
 // Initialize all modals
 function initializeModals() {
@@ -33,6 +46,9 @@ function initializeModals() {
     
     // Initialize login form
     initializeLoginForm();
+    
+    // Setup modal functionality for dynamically created modals
+    setupDynamicModals();
     
     console.log('Modal system initialized');
 }
@@ -61,6 +77,24 @@ function setupModal(modal) {
             e.stopPropagation();
         });
     }
+}
+
+// Setup dynamic modals
+function setupDynamicModals() {
+    // Observer for dynamically added modals
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            mutation.addedNodes.forEach(function(node) {
+                if (node.nodeType === Node.ELEMENT_NODE && node.classList?.contains('modal')) {
+                    setupModal(node);
+                }
+            });
+        });
+    });
+    
+    observer.observe(document.body, {
+        childList: true
+    });
 }
 
 // Open modal
@@ -432,5 +466,6 @@ window.ModalManager = {
     closeModal,
     closeAllModals,
     openItemModal,
-    getActiveModal: () => activeModal
+    getActiveModal: () => activeModal,
+    setupModal
 };

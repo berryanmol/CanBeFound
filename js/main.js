@@ -33,8 +33,7 @@ function initializeApp() {
         initializeSearch();
     }
     
-    // Check authentication status
-    checkAuthStatus();
+    // Initialize authentication will be handled by auth.js
     
     console.log('CanBeFound.com initialized successfully');
 }
@@ -306,13 +305,22 @@ function openItemModal(itemId) {
 
 // Claim item
 function claimItem(itemId) {
-    if (!isLoggedIn) {
-        openModal('loginModal');
+    if (!window.Auth?.isLoggedIn()) {
+        if (window.ModalManager) {
+            window.ModalManager.openModal('loginModal');
+        }
         return;
     }
     
-    console.log('Claiming item ID:', itemId);
-    alert('Claim process would start here');
+    // Use enhanced claim functionality if available
+    if (window.enhancedClaimItem) {
+        window.enhancedClaimItem(itemId);
+    } else {
+        console.log('Claiming item ID:', itemId);
+        if (window.CanBeFound) {
+            window.CanBeFound.showNotification('Claim process started. Please provide verification details.', 'info');
+        }
+    }
 }
 
 // Initialize search functionality
@@ -339,43 +347,6 @@ function performSearch() {
         // Redirect to search page with query
         window.location.href = `search.html?q=${encodeURIComponent(query)}`;
     }
-}
-
-// Check authentication status
-function checkAuthStatus() {
-    // Check if user is logged in (mock implementation)
-    const token = localStorage.getItem('authToken');
-    if (token) {
-        isLoggedIn = true;
-        currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
-        updateAuthUI();
-    }
-}
-
-// Update authentication UI
-function updateAuthUI() {
-    const loginBtn = document.getElementById('loginBtn');
-    const signupBtn = document.getElementById('signupBtn');
-    
-    if (isLoggedIn && currentUser) {
-        if (loginBtn) {
-            loginBtn.textContent = currentUser.name || 'Profile';
-            loginBtn.onclick = () => window.location.href = 'profile.html';
-        }
-        if (signupBtn) {
-            signupBtn.textContent = 'Logout';
-            signupBtn.onclick = logout;
-        }
-    }
-}
-
-// Logout function
-function logout() {
-    localStorage.removeItem('authToken');
-    localStorage.removeItem('currentUser');
-    isLoggedIn = false;
-    currentUser = null;
-    window.location.reload();
 }
 
 // Utility functions
@@ -418,6 +389,6 @@ window.CanBeFound = {
     showNotification,
     debounce,
     formatDate,
-    isLoggedIn: () => isLoggedIn,
-    getCurrentUser: () => currentUser
+    isLoggedIn: () => window.Auth?.isLoggedIn() || false,
+    getCurrentUser: () => window.Auth?.getCurrentUser() || null
 };
