@@ -606,6 +606,38 @@
   padding: var(--spacing-xl);
 }
 
+/* Form Error Styles */
+.form-error {
+  display: none;
+  color: var(--error-color);
+  font-size: var(--font-size-sm);
+  margin-top: var(--spacing-xs);
+  font-weight: var(--font-weight-medium);
+}
+
+.form-help {
+  display: block;
+  font-size: var(--font-size-sm);
+  color: var(--text-light);
+  margin-top: var(--spacing-xs);
+}
+
+.form-footer {
+  text-align: center;
+  margin-top: var(--spacing-md);
+  font-size: var(--font-size-sm);
+  color: var(--text-light);
+}
+
+.form-footer a {
+  color: var(--primary-color);
+  font-weight: var(--font-weight-medium);
+}
+
+.form-footer a:hover {
+  color: var(--accent-color);
+}
+
 /* Footer */
 .footer {
   background: var(--primary-color);
