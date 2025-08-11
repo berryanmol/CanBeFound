@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CanBeFound - College Lost and Found Platform. Report lost items, find belongings, and participate in auctions for unclaimed items.">
+    <title>CanBeFound - College Lost & Found</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="icon" type="image/x-icon" href="favicon.jpg">
+</head>
+<body>
+    <!-- Skip to main content for screen readers -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Accessibility Toolbar -->
+    <div class="accessibility-toolbar" id="accessibilityToolbar">
+        <div class="toolbar-content">
+            <button class="toolbar-btn" id="colorblindToggle" aria-label="Toggle colorblind-friendly mode">
+                <span class="btn-icon">🎨</span>
+                <span class="btn-text">Colorblind Mode</span>
+            </button>
+            <button class="toolbar-btn" id="fontSizeToggle" aria-label="Increase font size">
+                <span class="btn-icon">A+</span>
+                <span class="btn-text">Larger Text</span>
+            </button>
+            <button class="toolbar-btn" id="highContrastToggle" aria-label="Toggle high contrast mode">
+                <span class="btn-icon">◐</span>
+                <span class="btn-text">High Contrast</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo" aria-label="CanBeFound.com Home">
+                    <span class="logo-text">Can</span><span class="logo-domain">BeFound</span>
+                </a>
+            </div>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+            
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
+                    <li><a href="report-lost.html" class="nav-link">Report Lost</a></li>
+                    <li><a href="report-found.html" class="nav-link">Report Found</a></li>
+                    <li><a href="search.html" class="nav-link">Search Items</a></li>
+                    <li><a href="auctions.html" class="nav-link">Auctions</a></li>
+                    <li><a href="help.html" class="nav-link">Help</a></li>
+                    <li><a href="aboutus3.html" class="nav-link">About Us</a></li>
+                    <li><a href="contacus.html" class="nav-link">Contact Us</a></li>
+                </ul>
+                <div class="nav-auth">
+                    <button class="btn btn-secondary" id="loginBtn">Login</button>
+                    <button class="btn btn-primary" id="signupBtn">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 id="hero-title" class="hero-title">
+                        Lost Something? <br>
+                        <span class="text-accent">We'll Help You Find It!</span>
+                    </h1>
+                    <p class="hero-description">
+                        Your college's digital Lost and Found platform. Report lost items, 
+                        help others find their belongings, and participate in auctions for unclaimed items.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="report-lost.html" class="btn btn-primary btn-lg">Report Lost Item</a>
+                        <a href="search.html" class="btn btn-secondary btn-lg">Search Items</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-graphic">
+                        <div class="graphic-item item-1"></div>
+                        <div class="graphic-item item-2"></div>
+                        <div class="graphic-item item-3"></div>
+                        <div class="graphic-item item-4"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="quick-actions" aria-labelledby="quick-actions-title">
+            <div class="container">
+                <h2 id="quick-actions-title" class="section-title">Quick Actions</h2>
+                <div class="actions-grid">
+                    <a href="report-lost.html" class="action-card" aria-label="Report a lost item">
+                        <div class="card-icon lost-icon">📱</div>
+                        <h3 class="card-title">Report Lost Item</h3>
+                        <p class="card-description">Lost something on campus? Report it here and we'll help you find it.</p>
+                    </a>
+                    
+                    <a href="report-found.html" class="action-card" aria-label="Report a found item">
+                        <div class="card-icon found-icon">✋</div>
+                        <h3 class="card-title">Report Found Item</h3>
+                        <p class="card-description">Found something that doesn't belong to you? Help return it to its owner.</p>
+                    </a>
+                    
+                    <a href="search.html" class="action-card" aria-label="Search for items">
+                        <div class="card-icon search-icon">🔍</div>
+                        <h3 class="card-title">Search Items</h3>
+                        <p class="card-description">Browse through reported items to find what you're looking for.</p>
+                    </a>
+                    
+                    <a href="auctions.html" class="action-card" aria-label="View auction items">
+                        <div class="card-icon auction-icon">🏷️</div>
+                        <h3 class="card-title">Auctions</h3>
+                        <p class="card-description">Bid on unclaimed items that have been moved to auction.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Items -->
+        <section class="recent-items" aria-labelledby="recent-items-title">
+            <div class="container">
+                <h2 id="recent-items-title" class="section-title">Recently Reported Items</h2>
+                <div class="items-grid" id="recentItemsGrid">
+                    <!-- Items will be loaded here via JavaScript -->
+                </div>
+                <div class="section-footer">
+                    <a href="search.html" class="btn btn-outline">View All Items</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats" aria-labelledby="stats-title">
+            <div class="container">
+                <h2 id="stats-title" class="section-title">Platform Statistics</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" data-count="247">0</div>
+                        <div class="stat-label">Items Successfully Returned</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-count="89">0</div>
+                        <div class="stat-label">Active Lost Reports</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-count="156">0</div>
+                        <div class="stat-label">Found Items Awaiting Claim</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-count="23">0</div>
+                        <div class="stat-label">Items in Auction</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">CanBeFound.com</h3>
+                    <p class="footer-description">
+                        Your trusted college Lost and Found platform, helping students and staff 
+                        reconnect with their lost belongings.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="report-lost.html">Report Lost Item</a></li>
+                        <li><a href="report-found.html">Report Found Item</a></li>
+                        <li><a href="search.html">Search Items</a></li>
+                        <li><a href="auctions.html">Auctions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="help.html">Help & FAQ</a></li>
+                        <li><a href="contacus.html">Contact Us</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="privacy.html#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Contact Information</h4>
+                    <div class="contact-info">
+                        <p>📧 <a href="mailto:support@canbefound.com">support@canbefound.com</a></p>
+                        <p>📞 <a href="tel:+1234567890">(123) 456-7890</a></p>
+                        <p>📍 Student Services Building, Room 101</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 CanBeFound.com. All rights reserved.</p>
+                <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal" role="dialog" aria-labelledby="login-title" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="login-title" class="modal-title">Student Login</h2>
+                <button class="modal-close" aria-label="Close login modal">&times;</button>
+            </div>
+            <form class="modal-body" id="loginForm">
+                <div class="form-group">
+                    <label for="collegeId" class="form-label">College ID</label>
+                    <input type="text" id="collegeId" name="collegeId" class="form-input" required 
+                           aria-describedby="college-id-help">
+                    <small id="college-id-help" class="form-help">Enter your student or staff ID</small>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" name="password" class="form-input" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary btn-full">Login</button>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/accessibility.js"></script>
+    <script src="js/modals.js"></script>
+    <script src="api-client.js"></script>
+    <script src="js/api-integration.js"></script>
+</body>
+</html>

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Help & FAQ - CanBeFound.com College Lost and Found Platform">
+    <title>Help & FAQ - CanBeFound.com</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/help.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Accessibility Toolbar -->
+    <div class="accessibility-toolbar" id="accessibilityToolbar">
+        <div class="toolbar-content">
+            <button class="toolbar-btn" id="colorblindToggle" aria-label="Toggle colorblind-friendly mode">
+                <span class="btn-icon">🎨</span>
+                <span class="btn-text">Colorblind Mode</span>
+            </button>
+            <button class="toolbar-btn" id="fontSizeToggle" aria-label="Increase font size">
+                <span class="btn-icon">A+</span>
+                <span class="btn-text">Larger Text</span>
+            </button>
+            <button class="toolbar-btn" id="highContrastToggle" aria-label="Toggle high contrast mode">
+                <span class="btn-icon">◐</span>
+                <span class="btn-text">High Contrast</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo" aria-label="CanBeFound.com Home">
+                    <span class="logo-text">Can</span><span class="logo-domain">BeFound</span>
+                </a>
+            </div>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+            
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="report-lost.html" class="nav-link">Report Lost</a></li>
+                    <li><a href="report-found.html" class="nav-link">Report Found</a></li>
+                    <li><a href="search.html" class="nav-link">Search Items</a></li>
+                    <li><a href="auctions.html" class="nav-link">Auctions</a></li>
+                    <li><a href="help.html" class="nav-link active" aria-current="page">Help</a></li>
+                    <li><a href="aboutus3.html" class="nav-link">About Us</a></li>
+                    <li><a href="contacus.html" class="nav-link">Contact Us</a></li>
+                </ul>
+                <div class="nav-auth">
+                    <button class="btn btn-secondary" id="loginBtn">Login</button>
+                    <button class="btn btn-primary" id="signupBtn">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <div class="page-header">
+            <div class="container">
+                <h1 class="page-title">Help & Support</h1>
+                <p class="page-description">
+                    Find answers to common questions and get support for using CanBeFound.com
+                </p>
+            </div>
+        </div>
+
+        <section class="help-search">
+            <div class="container">
+                <div class="search-container">
+                    <input type="text" id="helpSearch" class="search-input" 
+                           placeholder="Search for help topics..."
+                           aria-label="Search help topics">
+                    <button class="search-btn" id="helpSearchBtn">🔍</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="help-content">
+            <div class="container">
+                <div class="help-layout">
+                    <aside class="help-sidebar">
+                        <nav class="help-nav" aria-label="Help topics navigation">
+                            <h3 class="nav-title">Help Topics</h3>
+                            <ul class="help-nav-list">
+                                <li><a href="#getting-started" class="help-nav-link active">Getting Started</a></li>
+                                <li><a href="#reporting-items" class="help-nav-link">Reporting Items</a></li>
+                                <li><a href="#searching-claiming" class="help-nav-link">Searching & Claiming</a></li>
+                                <li><a href="#auction-guide" class="help-nav-link">Auction Guide</a></li>
+                                <li><a href="#account-help" class="help-nav-link">Account Help</a></li>
+                                <li><a href="#privacy-security" class="help-nav-link">Privacy & Security</a></li>
+                                <li><a href="#contact" class="help-nav-link">Contact Us</a></li>
+                            </ul>
+                        </nav>
+                    </aside>
+
+                    <div class="help-main">
+                        <!-- Getting Started -->
+                        <section id="getting-started" class="help-section active">
+                            <h2 class="section-title">Getting Started</h2>
+                            
+                            <div class="faq-item">
+                                <h3 class="faq-question">What is CanBeFound.com?</h3>
+                                <div class="faq-answer">
+                                    <p>CanBeFound.com is your college's digital Lost and Found platform. It helps students and staff report lost items, register found items, and reunite people with their belongings. The platform also features an auction system for items that remain unclaimed after a specified period.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <h3 class="faq-question">How do I create an account?</h3>
+                                <div class="faq-answer">
+                                    <p>To create an account, click the "Sign Up" button in the top navigation. You'll need:</p>
+                                    <ul>
+                                        <li>Valid college ID number</li>
+                                        <li>College email address</li>
+                                        <li>Full name as registered with the college</li>
+                                    </ul>
+                                    <p>Your account will be verified within 24 hours.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <h3 class="faq-question">Do I need an account to browse items?</h3>
+                                <div class="faq-answer">
+                                    <p>You can browse and search items without an account, but you'll need to log in to:</p>
+                                    <ul>
+                                        <li>Report lost or found items</li>
+                                        <li>Claim items</li>
+                                        <li>Participate in auctions</li>
+                                        <li>Receive notifications</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Reporting Items -->
+                        <section id="reporting-items" class="help-section">
+                            <h2 class="section-title">Reporting Items</h2>
+                            
+                            <div class="faq-item">
+                                <h3 class="faq-question">How do I report a lost item?</h3>
+                                <div class="faq-answer">
+                                    <p>To report a lost item:</p>
+                                    <ol>
+                                        <li>Click "Report Lost Item" on the homepage or navigation</li>
+                                        <li>Fill out the detailed form with item information</li>
+                                        <li>Provide description, location, and date/time details</li>
+                                        <li>Upload a photo if available (highly recommended)</li>
+                                        <li>Submit your contact information</li>
+                                    </ol>
+                                    <p>The more details you provide, the better chance of finding your item!</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <h3 class="faq-question">How do I report a found item?</h3>
+                                <div class="faq-answer">
+                                    <p>If you've found someone's item:</p>
+                                    <ol>
+                                        <li>Click "Report Found Item"</li>
+                                        <li>Describe the item in detail</li>
+                                        <li>Specify where and when you found it</li>
+                                        <li>Choose a secure handover location</li>
+                                        <li>Take a photo (helps with verification)</li>
+                                    </ol>
+                                    <p>Thank you for helping return someone's belongings!</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <h3 class="faq-question">Can I edit my report after submitting?</h3>
+                                <div class="faq-answer">
+                                    <p>Currently, reports cannot be edited after submission to maintain integrity. If you need to make changes:</p>
+                                    <ul>
+                                        <li>Contact our support team with your report ID</li>
+                                        <li>Provide the corrected information</li>
+                                        <li>We'll update your report within 24 hours</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Searching & Claiming -->
+                        <section id="searching-claiming" class="help-section">
+                            <h2 class="section-title">Searching & Claiming Items</h2>
+                            
+                            <div class="faq-item">
+                                <h3 class="faq-question">How do I search for my lost item?</h3>
+                                <div class="faq-answer">
+                                    <p>Use our advanced search features:</p>
+                                    <ul>
+                                        <li><strong>Keyword Search:</strong> Enter item name or description</li>
+                                        <li><strong>Category Filter:</strong> Select specific item categories</li>
+                                        <li><strong>Location Filter:</strong> Filter by where items were found</li>
+                                        <li><strong>Date Range:</strong> Search within specific time periods</li>
+                                    </ul>
+                                    <p>Pro tip: Try different search terms and check regularly for new items!</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <h3 class="faq-question">How do I claim an item?</h3>
+                                <div class="faq-answer">
+                                    <p>To claim an item you believe is yours:</p>
+                                    <ol>
+                                        <li>Click "Request Claim" on the item</li>
+                                        <li>Provide detailed proof of ownership</li>
+                                        <li>Answer verification questions</li>
+                                        <li>Wait for admin approval</li>
+                                        <li>Arrange pickup with the finder</li>
+                                    </ol>
+                                    <p>Be prepared to provide specific details that prove the item is yours.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <h3 class="faq-question">What proof of ownership do I need?</h3>
+                                <div class="faq-answer">
+                                    <p>Acceptable proof includes:</p>
+                                    <ul>
+                                        <li>Serial numbers or model information</li>
+                                        <li>Photos of the item from before it was lost</li>
+                                        <li>Purchase receipts or warranty information</li>
+                                        <li>Unique identifying marks or customizations</li>
+                                        <li>Contents of bags (specific items inside)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Auction Guide -->
+                        <section id="auction-guide" class="help-section">
+                            <h2 class="section-title">Auction Guide</h2>
+                            
+                            <div class="faq-item">
+                                <h3 class="faq-question">How does the auction system work?</h3>
+                                <div class="faq-answer">
+                                    <p>Our auction system helps responsibly redistribute unclaimed items:</p>
+                                    <ul>
+                                        <li>Items unclaimed after 30 days move to auction</li>
+                                        <li>Only verified college community members can bid</li>
+                                        <li>Auctions typically run for 7 days</li>
+                                        <li>All proceeds support campus activities</li>
+                                        <li>Winners arrange pickup within 5 days</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <h3 class="faq-question">How do I participate in auctions?</h3>
+                                <div class="faq-answer">
+                                    <p>To participate in auctions:</p>
+                                    <ol>
+                                        <li>Ensure your account is verified</li>
+                                        <li>Browse active auctions on the Auctions page</li>
+                                        <li>Click on items to view detailed information</li>
+                                        <li>Place bids higher than the current bid</li>
+                                        <li>Monitor your bids until auction ends</li>
+                                    </ol>
+                                    <p>You'll be notified if you win an auction.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <h3 class="faq-question">What are the payment methods?</h3>
+                                <div class="faq-answer">
+                                    <p>We accept the following payment methods:</p>
+                                    <ul>
+                                        <li>Campus card/student account</li>
+                                        <li>Credit/debit cards</li>
+                                        <li>PayPal</li>
+                                        <li>Cash (for pickup at designated locations)</li>
+                                    </ul>
+                                    <p>Payment is due within 48 hours of winning an auction.</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Account Help -->
+                        <section id="account-help" class="help-section">
+                            <h2 class="section-title">Account Help</h2>
+                            
+                            <div class="faq-item">
+                                <h3 class="faq-question">I forgot my password. How can I reset it?</h3>
+                                <div class="faq-answer">
+                                    <p>To reset your password:</p>
+                                    <ol>
+                                        <li>Click "Login" then "Forgot Password?"</li>
+                                        <li>Enter your college email address</li>
+                                        <li>Check your email for reset instructions</li>
+                                        <li>Follow the link to create a new password</li>
+                                    </ol>
+                                    <p>If you don't receive an email, check your spam folder or contact support.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <h3 class="faq-question">How do I update my contact information?</h3>
+                                <div class="faq-answer">
+                                    <p>To update your contact information:</p>
+                                    <ol>
+                                        <li>Log into your account</li>
+                                        <li>Go to Account Settings</li>
+                                        <li>Update your information</li>
+                                        <li>Click "Save Changes"</li>
+                                    </ol>
+                                    <p>Some changes may require verification for security purposes.</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Privacy & Security -->
+                        <section id="privacy-security" class="help-section">
+                            <h2 class="section-title">Privacy & Security</h2>
+                            
+                            <div class="faq-item">
+                                <h3 class="faq-question">How is my personal information protected?</h3>
+                                <div class="faq-answer">
+                                    <p>We take privacy seriously:</p>
+                                    <ul>
+                                        <li>Contact info is only shared with verified matches</li>
+                                        <li>All data is encrypted and stored securely</li>
+                                        <li>We never sell or share your information</li>
+                                        <li>You control your notification preferences</li>
+                                        <li>Account access requires college ID verification</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <h3 class="faq-question">What should I do if I suspect fraud?</h3>
+                                <div class="faq-answer">
+                                    <p>If you suspect fraudulent activity:</p>
+                                    <ol>
+                                        <li>Do not share personal information</li>
+                                        <li>Report the incident immediately</li>
+                                        <li>Screenshot any suspicious messages</li>
+                                        <li>Contact campus security if needed</li>
+                                    </ol>
+                                    <p>We investigate all reports and take appropriate action.</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Contact -->
+                        <section id="contact" class="help-section">
+                            <h2 class="section-title">Contact Us</h2>
+                            
+                            <div class="contact-grid">
+                                <div class="contact-card">
+                                    <div class="contact-icon">📧</div>
+                                    <h3 class="contact-title">Email Support</h3>
+                                    <p class="contact-info">
+                                        <a href="mailto:support@canbefound.com">support@canbefound.com</a>
+                                    </p>
+                                    <p class="contact-desc">Response within 24 hours</p>
+                                </div>
+                                
+                                <div class="contact-card">
+                                    <div class="contact-icon">📞</div>
+                                    <h3 class="contact-title">Phone Support</h3>
+                                    <p class="contact-info">
+                                        <a href="tel:+1234567890">(123) 456-7890</a>
+                                    </p>
+                                    <p class="contact-desc">Monday-Friday, 9 AM - 5 PM</p>
+                                </div>
+                                
+                                <div class="contact-card">
+                                    <div class="contact-icon">📍</div>
+                                    <h3 class="contact-title">Office Location</h3>
+                                    <p class="contact-info">
+                                        Student Services Building<br>
+                                        Room 101
+                                    </p>
+                                    <p class="contact-desc">Walk-in hours: 10 AM - 4 PM</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-form-container">
+                                <h3 class="form-title">Send us a message</h3>
+                                <form class="contact-form" id="contactForm">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="contactName" class="form-label">Name</label>
+                                            <input type="text" id="contactName" name="name" class="form-input" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="contactEmail" class="form-label">Email</label>
+                                            <input type="email" id="contactEmail" name="email" class="form-input" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contactSubject" class="form-label">Subject</label>
+                                        <select id="contactSubject" name="subject" class="form-select" required>
+                                            <option value="">Select a topic</option>
+                                            <option value="account">Account Issues</option>
+                                            <option value="item">Item Report Problem</option>
+                                            <option value="auction">Auction Question</option>
+                                            <option value="technical">Technical Support</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contactMessage" class="form-label">Message</label>
+                                        <textarea id="contactMessage" name="message" class="form-textarea" 
+                                                  rows="4" required placeholder="Please describe your question or issue..."></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Send Message</button>
+                                </form>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+<!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">CanBeFound.com</h3>
+                    <p class="footer-description">
+                        Your trusted college Lost and Found platform, helping students and staff 
+                        reconnect with their lost belongings.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="report-lost.html">Report Lost Item</a></li>
+                        <li><a href="report-found.html">Report Found Item</a></li>
+                        <li><a href="search.html">Search Items</a></li>
+                        <li><a href="auctions.html">Auctions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="help.html">Help & FAQ</a></li>
+                        <li><a href="contacus.html">Contact Us</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="privacy.html#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Contact Information</h4>
+                    <div class="contact-info">
+                        <p>📧 <a href="mailto:support@canbefound.com">support@canbefound.com</a></p>
+                        <p>📞 <a href="tel:+1234567890">(123) 456-7890</a></p>
+                        <p>📍 Student Services Building, Room 101</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 CanBeFound.com. All rights reserved.</p>
+                <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/accessibility.js"></script>
+    <script src="js/help.js"></script>
+    <script src="api-client.js"></script>
+    <script src="js/api-integration.js"></script>
+</body>
+</html>

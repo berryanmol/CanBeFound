@@ -1,0 +1,120 @@
+/* CanBeFound.com - Admin Dashboard Styles (Updated to Brand Guidelines) */
+
+/* Root Variables (Brand Colors + Fonts) */
+:root {
+  /* Brand Colors */
+  --primary-color: #003f5c; /* Navy Blue */
+  --secondary-color: #ffa600; /* Orange */
+  --accent-color: #2f4b7c; /* Teal */
+  --background-color: #f9f9f9; /* Off-White */
+  --text-color: #2e2e2e; /* Charcoal */
+  --text-light: rgba(46, 46, 46, 0.7);
+  
+  /* State Colors */
+  --success-color: #28a745;
+  --error-color: #dc3545;
+  --info-color: var(--accent-color);
+  --white: #ffffff;
+  --gray-100: #f4f4f4;
+  --gray-200: #e0e0e0;
+  --gray-300: #c2c2c2;
+
+  /* Fonts */
+  --font-family-brand: 'Montserrat', sans-serif;
+  --font-family-heading: 'Poppins', sans-serif;
+  --font-family-body: 'Inter', sans-serif;
+
+  /* Font Sizes */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}
+
+/* Typography Updates */
+body {
+  font-family: var(--font-family-body);
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+h1, h2, h3, h4, h5, h6, .section-title, .card-title {
+  font-family: var(--font-family-heading);
+  color: var(--text-color);
+}
+
+.logo-text {
+  font-family: var(--font-family-brand);
+}
+
+button, .nav-link, .logout-btn, .action-btn {
+  font-family: var(--font-family-heading);
+}
+
+/* Sidebar Adjustments with New Palette */
+.admin-sidebar {
+  background: var(--primary-color);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: var(--accent-color);
+  color: var(--white);
+}
+
+.nav-link.active::before {
+  background: var(--secondary-color);
+}
+
+.profile-avatar {
+  background: var(--secondary-color);
+}
+
+.logout-btn {
+  background: var(--accent-color);
+}
+
+.logout-btn:hover {
+  background: var(--secondary-color);
+}
+
+/* Stats & Cards */
+.stat-icon {
+  background: var(--primary-color);
+}
+
+.page-number.active {
+  background: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.action-btn.edit {
+  background: var(--accent-color);
+}
+
+.action-btn.delete {
+  background: var(--error-color);
+}
+
+.action-btn.approve {
+  background: var(--success-color);
+}
+
+/* Table Header Colors */
+.admin-table th {
+  background: var(--gray-100);
+  color: var(--text-color);
+}
+.admin-table th:hover {
+  background: var(--gray-200);
+}

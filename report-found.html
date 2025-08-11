@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Report a found item on CanBeFound.com - College Lost and Found Platform">
+    <title>Report Found Item - CanBeFound.com</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/forms.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Accessibility Toolbar -->
+    <div class="accessibility-toolbar" id="accessibilityToolbar">
+        <div class="toolbar-content">
+            <button class="toolbar-btn" id="colorblindToggle" aria-label="Toggle colorblind-friendly mode">
+                <span class="btn-icon">🎨</span>
+                <span class="btn-text">Colorblind Mode</span>
+            </button>
+            <button class="toolbar-btn" id="fontSizeToggle" aria-label="Increase font size">
+                <span class="btn-icon">A+</span>
+                <span class="btn-text">Larger Text</span>
+            </button>
+            <button class="toolbar-btn" id="highContrastToggle" aria-label="Toggle high contrast mode">
+                <span class="btn-icon">◐</span>
+                <span class="btn-text">High Contrast</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo" aria-label="CanBeFound.com Home">
+                    <span class="logo-text">Can</span><span class="logo-domain">BeFound</span>
+                </a>
+            </div>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+            
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="report-lost.html" class="nav-link">Report Lost</a></li>
+                    <li><a href="report-found.html" class="nav-link active" aria-current="page">Report Found</a></li>
+                    <li><a href="search.html" class="nav-link">Search Items</a></li>
+                    <li><a href="auctions.html" class="nav-link">Auctions</a></li>
+                    <li><a href="help.html" class="nav-link">Help</a></li>
+                    <li><a href="aboutus3.html" class="nav-link">About Us</a></li>
+                    <li><a href="contacus.html" class="nav-link">Contact Us</a></li>
+                </ul>
+                <div class="nav-auth">
+                    <button class="btn btn-secondary" id="loginBtn">Login</button>
+                    <button class="btn btn-primary" id="signupBtn">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <div class="page-header">
+            <div class="container">
+                <h1 class="page-title">Report Found Item</h1>
+                <p class="page-description">
+                    Thank you for helping return someone's lost item! Please provide details about what you found.
+                </p>
+            </div>
+        </div>
+
+        <section class="form-section">
+            <div class="container">
+                <div class="form-container">
+                    <form id="foundItemForm" class="report-form" novalidate style="width: 170%;">
+                        <div class="form-step active">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="itemName" class="form-label required">Item Name</label>
+                                    <input type="text" id="itemName" name="itemName" class="form-input" required
+                                           placeholder="e.g., iPhone 13 Pro, Black Backpack, etc.">
+                                    <div class="form-error" id="itemNameError"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="category" class="form-label required">Category</label>
+                                    <select id="category" name="category" class="form-select" required>
+                                        <option value="">Select a category</option>
+                                        <option value="electronics">Electronics</option>
+                                        <option value="clothing">Clothing & Accessories</option>
+                                        <option value="bags">Bags & Backpacks</option>
+                                        <option value="books">Books & Stationery</option>
+                                        <option value="jewelry">Jewelry & Watches</option>
+                                        <option value="keys">Keys & Key Chains</option>
+                                        <option value="sports">Sports Equipment</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                    <div class="form-error" id="categoryError"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="description" class="form-label required">Description</label>
+                                <textarea id="description" name="description" class="form-textarea" rows="4" required
+                                          placeholder="Provide detailed description including color, brand, size, condition, etc."></textarea>
+                                <div class="form-error" id="descriptionError"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="itemPhoto" class="form-label">Photo (Recommended)</label>
+                                <div class="file-upload">
+                                    <input type="file" id="itemPhoto" name="itemPhoto" accept="image/*" class="file-input">
+                                    <label for="itemPhoto" class="file-label">
+                                        <span class="file-icon">📷</span>
+                                        <span class="file-text">Click to upload photo or drag and drop</span>
+                                    </label>
+                                    <div class="file-preview" id="photoPreview"></div>
+                                </div>
+                                <small class="form-help">A photo helps verify ownership when someone claims the item</small>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="foundDate" class="form-label required">Date Found</label>
+                                    <input type="date" id="foundDate" name="foundDate" class="form-input" required>
+                                    <div class="form-error" id="foundDateError"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="foundTime" class="form-label">Approximate Time</label>
+                                    <input type="time" id="foundTime" name="foundTime" class="form-input">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="location" class="form-label required">Where did you find it?</label>
+                                <select id="location" name="location" class="form-select" required>
+                                    <option value="">Select location</option>
+                                    <option value="library">Library</option>
+                                    <option value="cafeteria">Cafeteria</option>
+                                    <option value="gym">Gymnasium</option>
+                                    <option value="dormitory">Dormitory</option>
+                                    <option value="classroom">Classroom</option>
+                                    <option value="parking">Parking Area</option>
+                                    <option value="auditorium">Auditorium</option>
+                                    <option value="lab">Laboratory</option>
+                                    <option value="outdoor">Outdoor Area</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <div class="form-error" id="locationError"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="specificLocation" class="form-label">Specific Location Details</label>
+                                <input type="text" id="specificLocation" name="specificLocation" class="form-input"
+                                       placeholder="e.g., under table 3, next to vending machine, Room 203">
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="finderName" class="form-label required">Your Name</label>
+                                    <input type="text" id="finderName" name="finderName" class="form-input" required>
+                                    <div class="form-error" id="finderNameError"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="collegeId" class="form-label required">College ID</label>
+                                    <input type="text" id="collegeId" name="collegeId" class="form-input" required>
+                                    <div class="form-error" id="collegeIdError"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactEmail" class="form-label required">Contact Email</label>
+                                <input type="email" id="contactEmail" name="contactEmail" class="form-input" required>
+                                <small class="form-help">We'll notify you when someone claims this item</small>
+                                <div class="form-error" id="contactEmailError"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="handoverLocation" class="form-label required">Where can the item be collected?</label>
+                                <select id="handoverLocation" name="handoverLocation" class="form-select" required>
+                                    <option value="">Select handover location</option>
+                                    <option value="security-office">Security Office</option>
+                                    <option value="student-services">Student Services</option>
+                                    <option value="library-desk">Library Information Desk</option>
+                                    <option value="admin-office">Administrative Office</option>
+                                    <option value="other">Other (specify below)</option>
+                                </select>
+                                <div class="form-error" id="handoverLocationError"></div>
+                            </div>
+
+                            <div class="form-group" id="customLocationGroup" style="display: none;">
+                                <label for="customLocation" class="form-label">Specify Location</label>
+                                <input type="text" id="customLocation" name="customLocation" class="form-input"
+                                       placeholder="Please specify where the item can be collected">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="additionalNotes" class="form-label">Additional Notes</label>
+                                <textarea id="additionalNotes" name="additionalNotes" class="form-textarea" rows="3"
+                                          placeholder="Any additional information about the item or circumstances..."></textarea>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="verifyOwnership" name="verifyOwnership" required>
+                                    <span class="checkbox-custom"></span>
+                                    I understand that claimants will need to provide proof of ownership
+                                </label>
+                                <div class="form-error" id="verifyOwnershipError"></div>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="handoverAgreement" name="handoverAgreement" required>
+                                    <span class="checkbox-custom"></span>
+                                    I agree to safely handover this item to the verified owner or authorized personnel
+                                </label>
+                                <div class="form-error" id="handoverAgreementError"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-lg">Submit Found Item Report</button>
+                            <button type="button" class="btn btn-secondary" onclick="history.back()">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+                &nbsp;
+                <div class="form-sidebar">
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-title">Thank You!</h3>
+                        <p class="sidebar-text">
+                            Your effort to return someone's lost item is greatly appreciated. 
+                            Together, we can make our campus community more caring and supportive.
+                        </p>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-title">What Happens Next?</h3>
+                        <ul class="sidebar-list">
+                            <li>Your report will be reviewed by our admin team</li>
+                            <li>We'll match your item with lost reports</li>
+                            <li>Potential owners will be contacted for verification</li>
+                            <li>You'll be notified when a verified claim is made</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-title">Safety Guidelines</h3>
+                        <ul class="sidebar-list">
+                            <li>Only meet claimants in public, designated areas</li>
+                            <li>Verify identity before handing over items</li>
+                            <li>Report any suspicious activity to security</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+<!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">CanBeFound.com</h3>
+                    <p class="footer-description">
+                        Your trusted college Lost and Found platform, helping students and staff 
+                        reconnect with their lost belongings.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="report-lost.html">Report Lost Item</a></li>
+                        <li><a href="report-found.html">Report Found Item</a></li>
+                        <li><a href="search.html">Search Items</a></li>
+                        <li><a href="auctions.html">Auctions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="help.html">Help & FAQ</a></li>
+                        <li><a href="contacus.html">Contact Us</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="privacy.html#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Contact Information</h4>
+                    <div class="contact-info">
+                        <p>📧 <a href="mailto:support@canbefound.com">support@canbefound.com</a></p>
+                        <p>📞 <a href="tel:+1234567890">(123) 456-7890</a></p>
+                        <p>📍 Student Services Building, Room 101</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 CanBeFound.com. All rights reserved.</p>
+                <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/accessibility.js"></script>
+    <script src="js/found-form.js"></script>
+    <script src="api-client.js"></script>
+    <script src="js/api-integration.js"></script>
+</body>
+</html>

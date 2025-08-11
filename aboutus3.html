@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - Lost & Found</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Contact the Lost and Found team at our campus for help with lost or found items.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/main.css">
+<link rel="stylesheet" href="styles/components.css">
+<link rel="stylesheet" href="styles/responsive.css">
+<link rel="icon" type="image/x-icon" href="favicon.jpg">
+<style>
+body {
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        margin: 0;
+        background: #f7f9fc;
+        color: #333;
+        line-height: 1.6;
+    }
+    h1, h2, h3 { margin: 0; }
+    .container {
+        width: 90%;
+        max-width: 1100px;
+        margin: auto;
+    }
+    /* Hero */
+    .hero {
+        padding: 4rem 1rem;
+        background: linear-gradient(135deg, #0072ff, #00c6ff);
+        color: white;
+        text-align: center;
+    }
+    .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+    }
+    .hero p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: auto;
+        opacity: 0.95;
+    }
+    /* Section */
+    section {
+        padding: 3rem 1rem;
+    }
+    .section-title {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 2rem;
+        font-weight: bold;
+        color: #0072ff;
+    }
+    .section-subtitle {
+        text-align: center;
+        max-width: 700px;
+        margin: auto;
+        color: #555;
+        margin-bottom: 2.5rem;
+    }
+    /* Cards Grid */
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+    .card {
+        background: white;
+        border-radius: 12px;
+        padding: 2rem;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        transition: transform 0.2s ease;
+    }
+    .card:hover { transform: translateY(-5px); }
+    .card svg {
+        width: 40px;
+        height: 40px;
+        fill: #0072ff;
+        margin-bottom: 0.8rem;
+    }
+    .card h3 { margin-bottom: 0.5rem; color: #0072ff; }
+    /* Two Column */
+    .two-col {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        align-items: center;
+    }
+    .two-col div {
+        flex: 1;
+        min-width: 280px;
+    }
+    .two-col p { margin-bottom: 1rem; }
+    /* Founders */
+    .founders {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        text-align: center;
+    }
+    .founder-card {
+        background: white;
+        border-radius: 12px;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        height: 100%;
+    }
+    .founder-card img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 1rem;
+    }
+    .founder-name {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #0072ff;
+    }
+    .founder-role {
+        font-size: 0.95rem;
+        color: #555;
+        margin-bottom: 0.8rem;
+    }
+    .founder-quote {
+        font-style: italic;
+        color: #444;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+    .linkedin-link {
+        font-size: 0.9rem;
+        color: #0072ff;
+        text-decoration: none;
+    }
+    .linkedin-link:hover { text-decoration: underline; }
+    /* Alternating Sections */
+    .alt-bg { background: #eef5ff; }
+    /* Responsive */
+    @media(max-width: 768px) {
+        .hero h1 { font-size: 2.2rem; }
+    }
+    
+</style>
+</head>
+<body>
+
+    <!-- Accessibility Toolbar -->
+    <div class="accessibility-toolbar" id="accessibilityToolbar">
+        <div class="toolbar-content">
+            <button class="toolbar-btn" id="colorblindToggle" aria-label="Toggle colorblind-friendly mode">
+                <span class="btn-icon">🎨</span>
+                <span class="btn-text">Colorblind Mode</span>
+            </button>
+            <button class="toolbar-btn" id="fontSizeToggle" aria-label="Increase font size">
+                <span class="btn-icon">A+</span>
+                <span class="btn-text">Larger Text</span>
+            </button>
+            <button class="toolbar-btn" id="highContrastToggle" aria-label="Toggle high contrast mode">
+                <span class="btn-icon">◐</span>
+                <span class="btn-text">High Contrast</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo" aria-label="CanBeFound.com Home">
+                    <span class="logo-text">Can</span><span class="logo-domain">BeFound</span>
+                </a>
+            </div>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+            
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="report-lost.html" class="nav-link">Report Lost</a></li>
+                    <li><a href="report-found.html" class="nav-link">Report Found</a></li>
+                    <li><a href="search.html" class="nav-link">Search Items</a></li>
+                    <li><a href="auctions.html" class="nav-link">Auctions</a></li>
+                    <li><a href="help.html" class="nav-link">Help</a></li>
+                    <li><a href="aboutus3.html" class="nav-link active" aria-current="page">About Us</a></li>
+                    <li><a href="contacus.html" class="nav-link">Contact Us</a></li>
+                </ul>
+                <div class="nav-auth">
+                    <button class="btn btn-secondary" id="loginBtn">Login</button>
+                    <button class="btn btn-primary" id="signupBtn">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+<!-- Hero -->
+<div class="hero">
+    <h1>About Us</h1>
+    <p>We’re redefining how lost & found works — making it faster, fairer, and more transparent for campuses and communities.</p>
+</div>
+
+<!-- Mission -->
+<section>
+    <div class="container">
+        <h2 class="section-title">Our Mission</h2>
+        <p class="section-subtitle">To transform the lost & found process from a slow, manual system into a fast, transparent, and community-driven digital experience.</p>
+        <div class="card-grid">
+            <div class="card">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 12l2-2 4 4L19 4l2 2-12 12z"/></svg>
+                <h3>Transparency</h3>
+                <p>Ensure fair verification and claims to eliminate disputes and fraud.</p>
+            </div>
+            <div class="card">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 2H6a2 2 0 0 0-2 2v14h2v2h8v-2h2V4a2 2 0 0 0-2-2z"/></svg>
+                <h3>Efficiency</h3>
+                <p>Reduce the time and effort needed to reunite lost items with their owners.</p>
+            </div>
+            <div class="card">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/></svg>
+                <h3>Community</h3>
+                <p>Empower users to help each other find what’s been lost.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How We Redefine -->
+<section class="alt-bg">
+    <div class="container">
+        <h2 class="section-title">How We’re Changing the Game</h2>
+        <div class="two-col">
+            <div>
+                <p>Our platform replaces outdated lost & found processes with a secure and transparent system. No more paper logs or word-of-mouth — just quick reporting, easy searching, and verified claims.</p>
+                <p>Unclaimed items? We’ve built an auction system that fairly redistributes them while supporting community initiatives.</p>
+            </div>
+            <div>
+                <p>We tackle common challenges: fake claims, missing meeting points, privacy concerns, and old listings. This isn’t just an upgrade — it’s a reinvention of the entire lost & found ecosystem.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Founders -->
+<section>
+    <div class="container">
+        <h2 class="section-title">Meet the Co-Founders</h2>
+        <div class="founders">
+            <div class="founder-card">
+                <img src="https://res.cloudinary.com/dutufhhkq/image/upload/ar_1:1,c_auto,g_north/1722331096797_ke0fub.jpg" alt="Anmol Berry">
+                <div class="founder-name">Anmol Berry</div>
+                <div class="founder-role">Co-Founder (IPM, IIM Rohtak)</div>
+                <div class="founder-quote">"We aim to make losing something a temporary inconvenience, not a permanent loss."</div>
+                <a class="linkedin-link" href="https://www.linkedin.com/in/anmolberry/" target="_blank">LinkedIn Profile</a>
+            </div>
+            <div class="founder-card">
+                <img src="https://res.cloudinary.com/dutufhhkq/image/upload/ar_1:1,c_thumb,g_north,z_0.89/IMG_3407_btebwn.jpg" alt="Om Pingle">
+                <div class="founder-name">Om Pingle</div>
+                <div class="founder-role">Co-Founder (IPM, IIM Rohtak)</div>
+                <div class="founder-quote">"Lost items deserve to find their way home — and we’re building the map."</div>
+                <a class="linkedin-link" href="https://www.linkedin.com/in/om-pingale-2443a729b/" target="_blank">LinkedIn Profile</a>
+            </div>
+            <div class="founder-card">
+                <img src="https://res.cloudinary.com/dutufhhkq/image/upload/1709471688502_ytd6kj.jpg" alt="Gaurav Shekhawat">
+                <div class="founder-name">Gaurav Shekhawat</div>
+                <div class="founder-role">Co-Founder (IPM, IIM Rohtak)</div>
+                <div class="founder-quote">"A lost & found system should be as reliable as the people it serves."</div>
+                <a class="linkedin-link" href="https://www.linkedin.com/in/gourav-shekhawat-9b5a822a2/" target="_blank">LinkedIn Profile</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">CanBeFound.com</h3>
+                    <p class="footer-description">
+                        Your trusted college Lost and Found platform, helping students and staff 
+                        reconnect with their lost belongings.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="report-lost.html">Report Lost Item</a></li>
+                        <li><a href="report-found.html">Report Found Item</a></li>
+                        <li><a href="search.html">Search Items</a></li>
+                        <li><a href="auctions.html">Auctions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="help.html">Help & FAQ</a></li>
+                        <li><a href="contacus.html">Contact Us</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="privacy.html#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Contact Information</h4>
+                    <div class="contact-info">
+                        <p>📧 <a href="mailto:support@canbefound.com">support@canbefound.com</a></p>
+                        <p>📞 <a href="tel:+1234567890">(123) 456-7890</a></p>
+                        <p>📍 Student Services Building, Room 101</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 CanBeFound.com. All rights reserved.</p>
+                <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+            </div>
+        </div>
+    </footer>
+<!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/accessibility.js"></script>
+    <script src="js/modals.js"></script>
+    <script src="api-client.js"></script>
+    <script src="js/api-integration.js"></script>
+</body>
+</html>

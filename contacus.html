@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact the Lost and Found team at our campus for help with lost or found items.">
+    <title>Contact Us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="stylesheet" href="styles/forms.css">
+    <link rel="icon" type="image/x-icon" href="favicon.jpg">
+</head>
+<body>
+  
+    <!-- Accessibility Toolbar -->
+    <div class="accessibility-toolbar" id="accessibilityToolbar">
+        <div class="toolbar-content">
+            <button class="toolbar-btn" id="colorblindToggle" aria-label="Toggle colorblind-friendly mode">
+                <span class="btn-icon">🎨</span>
+                <span class="btn-text">Colorblind Mode</span>
+            </button>
+            <button class="toolbar-btn" id="fontSizeToggle" aria-label="Increase font size">
+                <span class="btn-icon">A+</span>
+                <span class="btn-text">Larger Text</span>
+            </button>
+            <button class="toolbar-btn" id="highContrastToggle" aria-label="Toggle high contrast mode">
+                <span class="btn-icon">◐</span>
+                <span class="btn-text">High Contrast</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo" aria-label="CanBeFound.com Home">
+                    <span class="logo-text">Can</span><span class="logo-domain">BeFound</span>
+                </a>
+            </div>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+            
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="report-lost.html" class="nav-link">Report Lost</a></li>
+                    <li><a href="report-found.html" class="nav-link">Report Found</a></li>
+                    <li><a href="search.html" class="nav-link">Search Items</a></li>
+                    <li><a href="auctions.html" class="nav-link">Auctions</a></li>
+                    <li><a href="help.html" class="nav-link">Help</a></li>
+                    <li><a href="aboutus3.html" class="nav-link">About Us</a></li>
+                    <li><a href="contacus.html" class="nav-link active" aria-current="page">Contact Us</a></li>
+                </ul>
+                <div class="nav-auth">
+                    <button class="btn btn-secondary" id="loginBtn">Login</button>
+                    <button class="btn btn-primary" id="signupBtn">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <h1 class="page-title">Contact Us</h1>
+      <p class="page-description">
+        We’re here to assist you with lost and found queries.  
+        Reach out via email, call us, or visit our office.
+      </p>
+    </div>
+  </header>
+
+  <section class="contact-section">
+    <div class="container contact-container" style="display: grid; gap: var(--spacing-2xl);">
+
+      <!-- Contact Info -->
+      <div class="contact-info-cards" style="display: grid; gap: var(--spacing-lg); grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+        
+        <div class="card" style="padding: var(--spacing-xl); text-align: center;">
+          <div class="card-icon" style="font-size: 2rem; color: var(--primary); margin-bottom: var(--spacing-md);">
+            📧
+          </div>
+          <h3>Email Us</h3>
+          <p><a href="mailto:lostfound@iimrohtak.ac.in">support@canbefound.com</a></p>
+        </div>
+
+        <div class="card" style="padding: var(--spacing-xl); text-align: center;">
+          <div class="card-icon" style="font-size: 2rem; color: var(--primary); margin-bottom: var(--spacing-md);">
+            📱
+          </div>
+          <h3>Call Us</h3>
+          <p><a href="tel:+911234567890">+91 12345 67890</a></p>
+        </div>
+      </div>
+
+      <!-- Map Section -->
+      <div class="map-section">
+        <h2 class="section-title">Find Us Here</h2>
+        <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg);">
+          <iframe
+            title="IIM Rohtak Location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6997.181415293908!2d76.6267014!3d28.8942316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d83c1d4235b0d%3A0xc7b868a59e86cdc7!2sIndian%20Institute%20of%20Management%20Rohtak!5e0!3m2!1sen!2sin!4v1691750414989!5m2!1sen!2sin"
+            width="100%"
+            height="350"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <p style="margin-top: var(--spacing-md);">
+          <a href="https://goo.gl/maps/6QZyKJpsp8H2" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            📍 View on Google Maps
+          </a>
+        </p>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-container">
+          <h3 class="form-title">Send us a message</h3>
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactName" class="form-label">Name</label>
+                <input type="text" id="contactName" name="name" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label for="contactEmail" class="form-label">Email</label>
+                <input type="email" id="contactEmail" name="email" class="form-input" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contactSubject" class="form-label">Subject</label>
+              <select id="contactSubject" name="subject" class="form-select" required>
+                <option value="">Select a topic</option>
+                <option value="account">Account Issues</option>
+                <option value="item">Item Report Problem</option>
+                <option value="auction">Auction Question</option>
+                <option value="technical">Technical Support</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+              <div class="form-group">
+                <label for="contactMessage" class="form-label">Message</label>
+                <textarea id="contactMessage" name="message" class="form-textarea" 
+                rows="4" required placeholder="Please describe your question or issue..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+            
+          </form>
+        </div>
+
+    </div>
+  </section>
+&NonBreakingSpace;
+  <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">CanBeFound.com</h3>
+                    <p class="footer-description">
+                        Your trusted college Lost and Found platform, helping students and staff 
+                        reconnect with their lost belongings.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="report-lost.html">Report Lost Item</a></li>
+                        <li><a href="report-found.html">Report Found Item</a></li>
+                        <li><a href="search.html">Search Items</a></li>
+                        <li><a href="auctions.html">Auctions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="help.html">Help & FAQ</a></li>
+                        <li><a href="contacus.html">Contact Us</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="privacy.html#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Contact Information</h4>
+                    <div class="contact-info">
+                        <p>📧 <a href="mailto:support@canbefound.com">support@canbefound.com</a></p>
+                        <p>📞 <a href="tel:+1234567890">(123) 456-7890</a></p>
+                        <p>📍 Student Services Building, Room 101</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 CanBeFound.com. All rights reserved.</p>
+                <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+            </div>
+        </div>
+    </footer>
+
+<!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/accessibility.js"></script>
+    <script src="js/modals.js"></script>
+    <script src="api-client.js"></script>
+    <script src="js/api-integration.js"></script>
+</body>
+</html>

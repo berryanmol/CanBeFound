@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Report a lost item on CanBeFound.com - College Lost and Found Platform">
+    <title>Report Lost Item - CanBeFound.com</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/forms.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Accessibility Toolbar -->
+    <div class="accessibility-toolbar" id="accessibilityToolbar">
+        <div class="toolbar-content">
+            <button class="toolbar-btn" id="colorblindToggle" aria-label="Toggle colorblind-friendly mode">
+                <span class="btn-icon">🎨</span>
+                <span class="btn-text">Colorblind Mode</span>
+            </button>
+            <button class="toolbar-btn" id="fontSizeToggle" aria-label="Increase font size">
+                <span class="btn-icon">A+</span>
+                <span class="btn-text">Larger Text</span>
+            </button>
+            <button class="toolbar-btn" id="highContrastToggle" aria-label="Toggle high contrast mode">
+                <span class="btn-icon">◐</span>
+                <span class="btn-text">High Contrast</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo" aria-label="CanBeFound.com Home">
+                    <span class="logo-text">Can</span><span class="logo-domain">BeFound</span>
+                </a>
+            </div>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+            
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="report-lost.html" class="nav-link active" aria-current="page">Report Lost</a></li>
+                    <li><a href="report-found.html" class="nav-link">Report Found</a></li>
+                    <li><a href="search.html" class="nav-link">Search Items</a></li>
+                    <li><a href="auctions.html" class="nav-link">Auctions</a></li>
+                    <li><a href="help.html" class="nav-link">Help</a></li>
+                    <li><a href="aboutus3.html" class="nav-link">About Us</a></li>
+                    <li><a href="contacus.html" class="nav-link">Contact Us</a></li>
+                </ul>
+                <div class="nav-auth">
+                    <button class="btn btn-secondary" id="loginBtn">Login</button>
+                    <button class="btn btn-primary" id="signupBtn">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <div class="page-header">
+            <div class="container">
+                <h1 class="page-title">Report Lost Item</h1>
+                <p class="page-description">
+                    Fill out this form with as much detail as possible to help us find your lost item.
+                </p>
+            </div>
+        </div>
+
+        <section class="form-section">
+            <div class="container">
+                <div class="form-container">
+                    <form id="lostItemForm" class="report-form" novalidate style="width: 100%;">
+                        <div class="form-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressFill"></div>
+                            </div>
+                            <div class="progress-steps">
+                                <div class="progress-step active" data-step="1">Item Details</div>
+                                <div class="progress-step" data-step="2">Location & Time</div>
+                                <div class="progress-step" data-step="3">Contact Info</div>
+                            </div>
+                        </div>
+
+                        <!-- Step 1: Item Details -->
+                        <div class="form-step active" data-step="1">
+                            <h2 class="step-title">Item Details</h2>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="itemName" class="form-label required">Item Name</label>
+                                    <input type="text" id="itemName" name="itemName" class="form-input" required
+                                           placeholder="e.g., iPhone 13 Pro, Black Backpack, etc."
+                                           aria-describedby="item-name-help">
+                                    <small id="item-name-help" class="form-help">Be specific about the item</small>
+                                    <div class="form-error" id="itemNameError"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="category" class="form-label required">Category</label>
+                                    <select id="category" name="category" class="form-select" required>
+                                        <option value="">Select a category</option>
+                                        <option value="electronics">Electronics</option>
+                                        <option value="clothing">Clothing & Accessories</option>
+                                        <option value="bags">Bags & Backpacks</option>
+                                        <option value="books">Books & Stationery</option>
+                                        <option value="jewelry">Jewelry & Watches</option>
+                                        <option value="keys">Keys & Key Chains</option>
+                                        <option value="sports">Sports Equipment</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                    <div class="form-error" id="categoryError"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="description" class="form-label required">Description</label>
+                                <textarea id="description" name="description" class="form-textarea" rows="4" required
+                                          placeholder="Provide detailed description including color, brand, size, distinguishing features, etc."
+                                          aria-describedby="description-help"></textarea>
+                                <small id="description-help" class="form-help">Include any unique identifiers or distinguishing features</small>
+                                <div class="form-error" id="descriptionError"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="itemPhoto" class="form-label">Photo (Optional)</label>
+                                <div class="file-upload">
+                                    <input type="file" id="itemPhoto" name="itemPhoto" accept="image/*" class="file-input">
+                                    <label for="itemPhoto" class="file-label">
+                                        <span class="file-icon">📷</span>
+                                        <span class="file-text">Click to upload photo or drag and drop</span>
+                                    </label>
+                                    <div class="file-preview" id="photoPreview"></div>
+                                </div>
+                                <small class="form-help">A photo can significantly help in identifying your item</small>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Location & Time -->
+                        <div class="form-step" data-step="2">
+                            <h2 class="step-title">Where and When Did You Lose It?</h2>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="lostDate" class="form-label required">Date Lost</label>
+                                    <input type="date" id="lostDate" name="lostDate" class="form-input" required>
+                                    <div class="form-error" id="lostDateError"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="lostTime" class="form-label">Approximate Time</label>
+                                    <input type="time" id="lostTime" name="lostTime" class="form-input">
+                                    <small class="form-help">If you remember the approximate time</small>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="location" class="form-label required">Location</label>
+                                <select id="location" name="location" class="form-select" required>
+                                    <option value="">Select location</option>
+                                    <option value="library">Library</option>
+                                    <option value="cafeteria">Cafeteria</option>
+                                    <option value="gym">Gymnasium</option>
+                                    <option value="dormitory">Dormitory</option>
+                                    <option value="classroom">Classroom</option>
+                                    <option value="parking">Parking Area</option>
+                                    <option value="auditorium">Auditorium</option>
+                                    <option value="lab">Laboratory</option>
+                                    <option value="outdoor">Outdoor Area</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <div class="form-error" id="locationError"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="specificLocation" class="form-label">Specific Location Details</label>
+                                <input type="text" id="specificLocation" name="specificLocation" class="form-input"
+                                       placeholder="e.g., 2nd floor study area, near the main entrance, Room 203">
+                                <small class="form-help">Be as specific as possible</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="circumstances" class="form-label">Circumstances</label>
+                                <textarea id="circumstances" name="circumstances" class="form-textarea" rows="3"
+                                          placeholder="How do you think you lost it? Any additional context that might help..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Contact Information -->
+                        <div class="form-step" data-step="3">
+                            <h2 class="step-title">Your Contact Information</h2>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="fullName" class="form-label required">Full Name</label>
+                                    <input type="text" id="fullName" name="fullName" class="form-input" required>
+                                    <div class="form-error" id="fullNameError"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="collegeIdContact" class="form-label required">College ID</label>
+                                    <input type="text" id="collegeIdContact" name="collegeIdContact" class="form-input" required>
+                                    <div class="form-error" id="collegeIdContactError"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email" class="form-label required">Email Address</label>
+                                    <input type="email" id="email" name="email" class="form-input" required>
+                                    <div class="form-error" id="emailError"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" class="form-input"
+                                           placeholder="(optional, for urgent contact)">
+                                </div>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="privacyConsent" name="privacyConsent" required>
+                                    <span class="checkbox-custom"></span>
+                                    I agree that my contact information may be shared with verified finders of my item
+                                </label>
+                                <div class="form-error" id="privacyConsentError"></div>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="notifications" name="notifications">
+                                    <span class="checkbox-custom"></span>
+                                    Send me email notifications about potential matches
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-navigation">
+                            <button type="button" class="btn btn-secondary" id="prevBtn" style="display: none;">Previous</button>
+                            <button type="button" class="btn btn-primary" id="nextBtn">Next</button>
+                            <button type="submit" class="btn btn-primary" id="submitBtn" style="display: none;">Submit Report</button>
+                        </div>
+                    </form>
+                </div>
+                &NonBreakingSpace;
+                <div class="form-sidebar">
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-title">Tips for Better Results</h3>
+                        <ul class="sidebar-list">
+                            <li>Be as specific as possible in your description</li>
+                            <li>Include unique identifying features</li>
+                            <li>Add a photo if you have one</li>
+                            <li>Remember the exact location and time</li>
+                            <li>Check back regularly for updates</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-title">Privacy & Security</h3>
+                        <p class="sidebar-text">
+                            Your personal information is kept secure and only shared with verified finders 
+                            when there's a potential match for your item.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+<!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">CanBeFound.com</h3>
+                    <p class="footer-description">
+                        Your trusted college Lost and Found platform, helping students and staff 
+                        reconnect with their lost belongings.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="report-lost.html">Report Lost Item</a></li>
+                        <li><a href="report-found.html">Report Found Item</a></li>
+                        <li><a href="search.html">Search Items</a></li>
+                        <li><a href="auctions.html">Auctions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="help.html">Help & FAQ</a></li>
+                        <li><a href="contacus.html">Contact Us</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="privacy.html#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Contact Information</h4>
+                    <div class="contact-info">
+                        <p>📧 <a href="mailto:support@canbefound.com">support@canbefound.com</a></p>
+                        <p>📞 <a href="tel:+1234567890">(123) 456-7890</a></p>
+                        <p>📍 Student Services Building, Room 101</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 CanBeFound.com. All rights reserved.</p>
+                <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/accessibility.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="api-client.js"></script>
+    <script src="js/api-integration.js"></script>
+</body>
+</html>
